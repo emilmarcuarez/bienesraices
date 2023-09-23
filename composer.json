@@ -1,0 +1,23 @@
+{
+    "name": "emil-cuarez/usando-composer",
+    "description": "proyecto con POO",
+    "autoload": {
+        "psr-4": {
+            
+            "Model\\": "./models",
+            "MVC\\": "./",
+            "Controllers\\": "./controllers"
+            
+        }
+        }
+    ,
+    "authors": [
+        {
+            "name": "emi2102",
+            "email": "emilmarpatricia@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7"
+    }
+}
