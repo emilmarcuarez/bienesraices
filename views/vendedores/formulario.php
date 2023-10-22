@@ -12,7 +12,7 @@
             <label for="imagen">Foto de perfil: </label>
             <input type="file" name="vendedor[imagen]" id="imagen" accept="image/jpeg, image/png, image/jpg" value="<?php echo s($vendedor->imagen); ?>">
             <?php if($vendedor->imagen){?>
-                <img src="/bienesraicespoo/imagenes_vendedor/<?php echo $vendedor->imagen ?>" class="imagen-small">          
+                <img src="/imagenes_vendedor/<?php echo $vendedor->imagen ?>" class="imagen-small">          
             <?php }?>
 </fieldset>
 
