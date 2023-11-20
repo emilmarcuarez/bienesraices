@@ -73,7 +73,7 @@
                 <td><?php echo $vendedor->telefono; ?></td>
                 <td><?php echo $vendedor->email; ?></td>
                 <td>
-                    <form method="POST" class="w-100">
+                    <form method="POST" class="w-100" action="/vendedores/eliminar">
                         <!-- ESTOS INPUT HIDDEN SIRVEN PARA MANDAR INFORMACION, QUE EN ESTE CASO ES EL ID -->
                         <input type="hidden" name="id" value="<?php echo $vendedor->id; ?>">
                         <input type="hidden" name="tipo" value="vendedor">

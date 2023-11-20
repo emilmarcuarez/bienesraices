@@ -14,7 +14,18 @@ class Activerecord
     // errores
     protected static $errores = [];
 
-
+  // Visibilidad de los atributos
+  public $id;
+  public $imagen;
+  public $titulo;
+  public $precio;
+  public $descripcion;
+  public $habitaciones;
+  public $wc;
+  public $estacionamiento;
+  public $creado;
+  public $vendedorId;
+  public $tipo;
  
 
     // definir la conexion a la base de datos

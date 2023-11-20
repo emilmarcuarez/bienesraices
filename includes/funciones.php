@@ -7,14 +7,14 @@ function incluirTemplate($nombre, $inicio=false){
 
     include TEMPLATES_URL . "/$nombre.php";
 }
-function estaautenticado() : bool{
-    session_start();
+// function estaautenticado() : bool{
+//     session_start();
 
-    if(!$_SESSION['login']){
-        header('location: /bienesraicespoo/login.php');
-    }
-    return false;
-}
+//     if(!$_SESSION['login']){
+//         header('location: /bienesraicespoo/login.php');
+//     }
+//     return false;
+// }
 // funcion para poder ver el contenido de alguna variable y observar su funcionamiento
 function debuguear($variable){
     echo "<pre>";

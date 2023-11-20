@@ -1,14 +1,5 @@
     
-<?php 
-   use App\Propiedad;
-   
-    if($_SERVER['SCRIPT_NAME']==='/bienesraicespoo/anuncios.php'){
-        $propiedades=  Propiedad::all();
-    }else{
-        $propiedades=  Propiedad::get(3);
-    }
 
-?>
     <div class="contenedor-anuncios">
         <!-- iterar los resultados que traje desde la base de datos -->
         <?php foreach($propiedades as $propiedad):?>

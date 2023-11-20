@@ -48,4 +48,23 @@ class Vendedor extends Activerecord{
         }
         return self::$errores;
     }
+    public function eliminar()
+    {
+        // ELIMINAR el registro
+        $query = "DELETE FROM ". static::$tabla. " WHERE id= " . self::$db->escape_string($this->id) . " LIMIT 1";
+        $resultado = self::$db->query($query);
+        if ($resultado) {
+            $this->borrarImagen();
+            // despues del link se pone un '?' y posterior el nombre de la variable que uno quiere y se iguala a un numero
+            header('location: /admin?resultado=3');
+        }
+    }
+
+    public function borrarImagen()
+    {
+        $existeArchivo = file_exists(CARPETA_IMAGENES_VENDEDOR . $this->imagen);
+        if ($existeArchivo) {
+            unlink(CARPETA_IMAGENES_VENDEDOR . $this->imagen);
+        }
+    }
 }

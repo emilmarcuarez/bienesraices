@@ -13,20 +13,22 @@ class Router{
     }
     public function comprobarRutas(){
         // basada en la url que estoy visitando gracias al router, me busca la funcion asociada a ese url
-        $urlActual=$_SERVER['PATH_INFO'] ?? null;
+        $urlActual=$_SERVER['PATH_INFO'] ?? '/';
         $metodo =$_SERVER['REQUEST_METHOD'];
         //    para validar la ruta
         if($metodo==='GET'){
            $fn=$this->rutasGET[$urlActual] ?? null;
+           
         }else {
             $fn=$this->rutasPOST[$urlActual] ?? null;
         }
         if($fn){
             // la url existe y hay una funcion asociada
-            // debuguear($fn);
             // cuando no sabemos el nombre de la funcion, esta la busca
+            // debuguear($fn);
             call_user_func($fn,$this);
         }else{
+            // debuguear($fn);
             echo 'Pagina No encontrada';
         }
     }

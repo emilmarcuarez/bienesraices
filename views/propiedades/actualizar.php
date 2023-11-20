@@ -1,4 +1,4 @@
-in class="contenedor seccion">
+<main class="contenedor seccion">
     <h1>Actualizar propiedad</h1>
 
      <!-- FOREACH PARA IR MOSTRANDO LOS ERRORES ALMACENADOS EN EL ARREGLO DE ERRORES EN LA PAGINA -->
