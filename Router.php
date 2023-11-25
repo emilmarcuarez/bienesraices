@@ -12,6 +12,14 @@ class Router{
         $this->rutasPOST[$url]=$fn;
     }
     public function comprobarRutas(){
+
+        session_start();
+        $auth=$_SESSION['login'] ?? null;
+
+        // ARREGLO DE RUTAS PROTEGIDAS
+        $rutas_protegidas=['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar','/vendedor/crear', '/vendedor/actualizar', '/vendedor/eliminar'];
+
+
         // basada en la url que estoy visitando gracias al router, me busca la funcion asociada a ese url
         $urlActual=$_SERVER['PATH_INFO'] ?? '/';
         $metodo =$_SERVER['REQUEST_METHOD'];
@@ -22,11 +30,18 @@ class Router{
         }else {
             $fn=$this->rutasPOST[$urlActual] ?? null;
         }
+
+        // PROTEGER LAS RUTAS
+        if(in_array($urlActual, $rutas_protegidas)&& !$auth){ ///si no esta autenticado
+            header('location: /');
+        }
+
         if($fn){
             // la url existe y hay una funcion asociada
             // cuando no sabemos el nombre de la funcion, esta la busca
             // debuguear($fn);
             call_user_func($fn,$this);
+
         }else{
             // debuguear($fn);
             echo 'Pagina No encontrada';
