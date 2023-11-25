@@ -1,14 +1,14 @@
 <?php
     
 // SI NO EXISTE SESSION, LA INICIAMOS
-    if(!isset($_SESSION)){
-        session_start();
-    }
+    // if(!isset($_SESSION)){
+    //     session_start();
+    // }
 
-    $auth=$_SESSION['login'] ?? false;
-    if(!isset($inicio)){
-        $inicio =false;
-    }
+    // $auth=$_SESSION['login'] ?? false;
+    // if(!isset($inicio)){
+    //     $inicio =false;
+    // }
 ?>
 
 <!DOCTYPE html>

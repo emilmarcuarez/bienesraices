@@ -34,5 +34,5 @@
                         </a>
                     </div><!--.contenido-anuncio-->
                 </div><!--anuncio-->
-            
+                <?php endforeach ?>
          </div>
